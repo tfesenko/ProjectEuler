@@ -1,11 +1,13 @@
 package my.projecteuler;
 
-import static my.projecteuler.FibonacciIterator.toStream;
+import static my.projecteuler.fibonacci.FibonacciIterator.toStream;
 
 import java.math.BigInteger;
 import java.util.Iterator;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
+
+import my.projecteuler.fibonacci.BigFibonacciIterator;
 
 /**
  * <h1><a href="http://projecteuler.net/problem=25">1000-digit Fibonacci
@@ -42,14 +44,12 @@ public class Problem25 {
 
 	private static Stream<BigInteger> fibonacciNumbersUntil(
 			final Predicate<BigInteger> until) {
-		Iterator<BigInteger> iterator = new FibonacciIterator<BigInteger>(null,
-				new BigInteger("1"), new BigInteger("1"),
-				(v1, v2) -> v1.add(v2)) {
+		Iterator<BigInteger> iterator = new BigFibonacciIterator() {
+
 			@Override
-			public boolean hasNext() {
-				return !this.getCurrent().isPresent()
-						|| !until.test(this.getCurrent().get());
-			};
+			protected boolean shouldTerminate(BigInteger currentValue) {
+				return until.test(currentValue);
+			}
 		};
 		return toStream(iterator);
 	}

@@ -1,10 +1,12 @@
 package my.projecteuler;
 
 import static java.util.stream.Collectors.summingInt;
-import static my.projecteuler.FibonacciIterator.*;
+import static my.projecteuler.fibonacci.FibonacciIterator.*;
 
 import java.util.function.Predicate;
 import java.util.stream.Stream;
+
+import my.projecteuler.fibonacci.FibonacciIterator;
 
 /**
  * <h1><a href="http://projecteuler.net/problem=2">Even Fibonacci numbers</a></h1>
