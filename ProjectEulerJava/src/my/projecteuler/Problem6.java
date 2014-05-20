@@ -27,9 +27,9 @@ import java.util.stream.IntStream;
 public class Problem6 {
 	public static void main(String[] args) {
 		int upperBound = 100;
-		int sumOfSquares = IntStream.range(1, upperBound + 1).map(v -> v * v)
+		int sumOfSquares = IntStream.rangeClosed(1, upperBound).map(v -> v * v)
 				.sum();
-		int sum = IntStream.range(1, upperBound + 1).sum();
+		int sum = IntStream.rangeClosed(1, upperBound).sum();
 		int squareOfSum = sum * sum;
 		int result = squareOfSum - sumOfSquares;
 		System.out.println("Problem 6: " + result);
