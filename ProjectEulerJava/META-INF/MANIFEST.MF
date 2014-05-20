@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ProjectEulerJava
+Bundle-SymbolicName: ProjectEulerJava
+Bundle-Version: 1.0.0.qualifier
+Export-Package: my.projecteuler,
+ my.projecteuler.fibonacci
+Require-Bundle: com.google.guava;bundle-version="11.0.2"

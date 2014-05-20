@@ -1,5 +1,6 @@
 package my.projecteuler;
 
+import static my.projecteuler.StringUtils.toDigitsSet;
 import static my.projecteuler.fibonacci.FibonacciIterator.toStream;
 
 import java.math.BigInteger;
@@ -54,12 +55,7 @@ public class Problem104 {
 	}
 
 	public static Predicate<String> isPandigital() {
-		return v -> ALL_DIGITS.equals(toDigits(v));
-	}
-
-	public static Set<Integer> toDigits(String digits) {
-		return digits.chars().map(Character::getNumericValue).boxed()
-				.collect(Collectors.<Integer> toSet());
+		return v -> ALL_DIGITS.equals(toDigitsSet(v));
 	}
 
 	public static Stream<BigInteger> fibonacciNumbersUntil(

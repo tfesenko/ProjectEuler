@@ -5,7 +5,7 @@ import static my.projecteuler.Problem104.endsWithPandigital;
 import static my.projecteuler.Problem104.fibonacciNumbersUntil;
 import static my.projecteuler.Problem104.isPandigital;
 import static my.projecteuler.Problem104.startsWithPandigital;
-import static my.projecteuler.Problem104.toDigits;
+import static my.projecteuler.StringUtils.toDigitsSet;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -22,10 +22,10 @@ import org.junit.Test;
 public class Problem104Test {
 
 	@Test
-	public void testToDigits() {
+	public void testToDigitsSet() {
 		// alternatively, we can use Guava's Sets.newHashSet() 
 		Set<Integer> expected = new HashSet<>(asList(1, 2, 3));
-		assertThat(toDigits("123"), equalTo(expected));
+		assertThat(toDigitsSet("123"), equalTo(expected));
 	}
 
 	@Test
