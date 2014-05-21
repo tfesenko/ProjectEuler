@@ -16,7 +16,7 @@ public class Primes {
 
 	public Primes(long maxSize) {
 		this.maxSize = maxSize;
-		boundedStream(1l, i -> i + 1).forEach(x -> primes.put(x, true));
+		boundedStream(2l, i -> i + 1).forEach(x -> primes.put(x, true));
 		boundedStream(2l, i -> i + 1).forEach(sieveFactors());
 	}
 

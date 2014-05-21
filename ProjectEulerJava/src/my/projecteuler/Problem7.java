@@ -24,7 +24,7 @@ public class Problem7 {
 	
 	public long getNthPrime(int index) {
 		Stream<Long> stream = new Primes(1000000).primesAsStream();
-		Object result = stream.toArray()[index];
+		Object result = stream.toArray()[index-1];
 		return (long)result;
 	}
 
