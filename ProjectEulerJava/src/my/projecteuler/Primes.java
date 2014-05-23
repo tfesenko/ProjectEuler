@@ -21,6 +21,9 @@ public class Primes {
 	}
 
 	public boolean isPrime(Long number) {
+		if (!primes.containsKey(number)) {
+			throw new RuntimeException("isPrime() is undefined for " + number);
+		}
 		return primes.get(number);
 	}
 
